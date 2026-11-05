@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -22,9 +23,11 @@ public class GameplayHud : MonoBehaviour
     [SerializeField] private GameObject invincibilityPanel;
     [SerializeField] private TMP_Text invincibilityText;
 
-    [Header("Power Shot")]
-    [SerializeField] private GameObject powerShotPanel;
-    [SerializeField] private TMP_Text powerShotText;
+    [Header("Damage Boost")]
+    [FormerlySerializedAs("powerShotPanel")]
+    [SerializeField] private GameObject damageBoostPanel;
+    [FormerlySerializedAs("powerShotText")]
+    [SerializeField] private TMP_Text damageBoostText;
 
     [Header("Result")]
     [SerializeField] private GameObject resultPanel;
@@ -43,7 +46,7 @@ public class GameplayHud : MonoBehaviour
 
         resultPanel.SetActive(false);
         invincibilityPanel.SetActive(false);
-        powerShotPanel.SetActive(false);
+        damageBoostPanel.SetActive(false);
     }
 
     private void OnEnable()
@@ -73,13 +76,13 @@ public class GameplayHud : MonoBehaviour
             invincibilityText.text = $"Invincible: {remaining:F1}s";
         }
 
-        bool hasPowerShot = playerPowerUps.HasPowerShot;
-        powerShotPanel.SetActive(hasPowerShot);
+        bool hasDamageBoost = playerPowerUps.HasDamageBoost;
+        damageBoostPanel.SetActive(hasDamageBoost);
 
-        if (hasPowerShot)
+        if (hasDamageBoost)
         {
-            float remaining = Mathf.Max(playerPowerUps.PowerShotTimer, 0f);
-            powerShotText.text = $"PowerUp: {remaining:F1}s";
+            float remaining = Mathf.Max(playerPowerUps.DamageBoostTimer, 0f);
+            damageBoostText.text = $"Damage x2: {remaining:F1}s";
         }
     }
 
@@ -92,9 +95,9 @@ public class GameplayHud : MonoBehaviour
         }
     }
 
-    public void SetCoins(int runCoins)
+    public void SetCoins(int coins)
     {
-        coinsText.text = $"Coins: {runCoins}";
+        coinsText.text = $"Coins: {coins}";
     }
 
     public void ShowResult(bool won, int score, int bestScore)

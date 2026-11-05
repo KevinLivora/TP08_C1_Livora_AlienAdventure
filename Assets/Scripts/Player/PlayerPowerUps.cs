@@ -10,13 +10,13 @@ public class PlayerPowerUps : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private float invincibleTimer;
     private float hitTimer;
-    private float powerShotTimer;
+    private float damageBoostTimer;
 
     public bool IsInvincible => invincibleTimer > 0f;
     public bool IsProtected => invincibleTimer > 0f || hitTimer > 0f;
-    public bool HasPowerShot => powerShotTimer > 0f;
+    public bool HasDamageBoost => damageBoostTimer > 0f;
     public float InvincibleTimer => invincibleTimer;
-    public float PowerShotTimer => powerShotTimer;
+    public float DamageBoostTimer => damageBoostTimer;
 
     private void Awake()
     {
@@ -31,8 +31,8 @@ public class PlayerPowerUps : MonoBehaviour
         if (hitTimer > 0f)
             hitTimer -= Time.deltaTime;
 
-        if (powerShotTimer > 0f)
-            powerShotTimer -= Time.deltaTime;
+        if (damageBoostTimer > 0f)
+            damageBoostTimer -= Time.deltaTime;
 
         RefreshColor();
     }
@@ -42,9 +42,9 @@ public class PlayerPowerUps : MonoBehaviour
         invincibleTimer = data.invincibilityDuration;
     }
 
-    public void ActivatePowerShot()
+    public void ActivateDamageBoost()
     {
-        powerShotTimer = data.powerShotDuration;
+        damageBoostTimer = data.damageBoostDuration;
     }
 
     public void ActivateHitProtection()

@@ -33,8 +33,8 @@ public class Collectible : MonoBehaviour
                 AudioManager.Instance.PlayExtraLife();
                 break;
 
-            case CollectibleType.PowerShot:
-                player.GetComponent<PlayerPowerUps>().ActivatePowerShot();
+            case CollectibleType.DamageBoost:
+                player.GetComponent<PlayerPowerUps>().ActivateDamageBoost();
                 AudioManager.Instance.PlayStar();
                 break;
 

@@ -3,6 +3,6 @@ public enum CollectibleType
     Coin,
     Star,
     ExtraLife,
-    PowerShot,
+    DamageBoost,
     Key
 }

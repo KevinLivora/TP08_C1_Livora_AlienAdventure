@@ -1,35 +1,35 @@
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
-[RequireComponent(typeof(PlayerShooting))]
+[RequireComponent(typeof(PlayerMelee))]
 public class PlayerAudio : MonoBehaviour
 {
     private PlayerController player;
-    private PlayerShooting shooting;
+    private PlayerMelee melee;
 
     private void Awake()
     {
         player = GetComponent<PlayerController>();
-        shooting = GetComponent<PlayerShooting>();
+        melee = GetComponent<PlayerMelee>();
     }
 
     private void OnEnable()
     {
         player.Jumped += OnJumped;
         player.Landed += OnLanded;
-        shooting.Shot += OnShot;
+        melee.Attacked += OnAttacked;
     }
 
     private void OnDisable()
     {
         player.Jumped -= OnJumped;
         player.Landed -= OnLanded;
-        shooting.Shot -= OnShot;
+        melee.Attacked -= OnAttacked;
     }
 
     private void OnJumped() => AudioManager.Instance.PlayJump();
 
     private void OnLanded() => AudioManager.Instance.PlayLand();
 
-    private void OnShot() => AudioManager.Instance.PlayShoot();
+    private void OnAttacked() => AudioManager.Instance.PlayAttack();
 }

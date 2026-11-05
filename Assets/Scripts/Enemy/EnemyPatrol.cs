@@ -2,12 +2,14 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Enemy))]
 public class EnemyPatrol : MonoBehaviour
 {
     [SerializeField] private EnemyDataSo data;
 
     private Rigidbody2D body;
     private SpriteRenderer spriteRenderer;
+    private Enemy enemy;
     private float startX;
     private int direction = -1;
 
@@ -15,11 +17,15 @@ public class EnemyPatrol : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        enemy = GetComponent<Enemy>();
         startX = transform.position.x;
     }
 
     private void FixedUpdate()
     {
+        if (enemy.IsStunned)
+            return;
+
         float offset = body.position.x - startX;
 
         if (direction < 0 && offset <= -data.patrolDistance)

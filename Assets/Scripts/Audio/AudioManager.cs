@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class AudioManager : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class AudioManager : MonoBehaviour
     [Header("Sfx Clips")]
     [SerializeField] private AudioClip jumpClip;
     [SerializeField] private AudioClip landClip;
-    [SerializeField] private AudioClip shootClip;
+    [FormerlySerializedAs("shootClip")]
+    [SerializeField] private AudioClip attackClip;
+    [SerializeField] private AudioClip enemyHitClip;
     [SerializeField] private AudioClip enemyKilledClip;
     [SerializeField] private AudioClip coinClip;
     [SerializeField] private AudioClip starClip;
@@ -53,7 +56,9 @@ public class AudioManager : MonoBehaviour
 
     public void PlayLand() => PlaySfx(landClip);
 
-    public void PlayShoot() => PlaySfx(shootClip);
+    public void PlayAttack() => PlaySfx(attackClip);
+
+    public void PlayEnemyHit() => PlaySfx(enemyHitClip);
 
     public void PlayEnemyKilled() => PlaySfx(enemyKilledClip);
 
