@@ -5,6 +5,7 @@ public class PlayerDataSo : ScriptableObject
 {
     public float moveSpeed = 6f;
     public float jumpForce = 15f;
+    public int maxJumps = 2;
     public float gravityScale = 4f;
     public KeyCode jumpKey = KeyCode.Space;
 

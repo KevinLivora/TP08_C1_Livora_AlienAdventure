@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private bool jumpRequested;
     private bool isGrounded;
+    private int jumpsLeft;
 
     public event Action Jumped;
     public event Action Landed;
@@ -58,12 +59,17 @@ public class PlayerController : MonoBehaviour
 
         if (!wasGrounded && isGrounded)
             Landed?.Invoke();
+
+        if (isGrounded && body.linearVelocity.y <= 0.01f)
+            jumpsLeft = data.maxJumps;
     }
 
     private void TryJump()
     {
-        if (jumpRequested && isGrounded)
+        if (jumpRequested && jumpsLeft > 0)
         {
+            jumpsLeft--;
+            body.linearVelocity = new Vector2(body.linearVelocity.x, 0f);
             body.AddForce(Vector2.up * data.jumpForce, ForceMode2D.Impulse);
             Jumped?.Invoke();
         }
