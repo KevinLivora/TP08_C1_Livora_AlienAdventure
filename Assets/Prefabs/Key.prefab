@@ -100,7 +100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2502693523273720862}
-  - component: {fileID: 792775712617215850}
+  - component: {fileID: 2878866917335739087}
   - component: {fileID: 687911186563133679}
   - component: {fileID: 6276056742636930484}
   m_Layer: 0
@@ -126,7 +126,7 @@ Transform:
   - {fileID: 662057253510922599}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &792775712617215850
+--- !u!114 &2878866917335739087
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,11 +135,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4128349974592573075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab83d058901ad941a2eaecb7411f84b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8af35e2341c26464f9602e1cd71e2c12, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Collectible
-  type: 4
-  coinValue: 10
+  m_EditorClassIdentifier: Assembly-CSharp::KeyPickable
 --- !u!50 &687911186563133679
 Rigidbody2D:
   serializedVersion: 5

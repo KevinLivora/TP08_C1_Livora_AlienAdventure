@@ -123,7 +123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7074862406173158098}
-  - component: {fileID: 1486262076411134722}
+  - component: {fileID: 1468473651579985174}
   - component: {fileID: 8542011978390652762}
   - component: {fileID: 1276321176425410750}
   m_Layer: 0
@@ -149,7 +149,7 @@ Transform:
   - {fileID: 6324718913146355921}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1486262076411134722
+--- !u!114 &1468473651579985174
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,11 +158,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5801138824047524774}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab83d058901ad941a2eaecb7411f84b, type: 3}
+  m_Script: {fileID: 11500000, guid: b41e196967bd0c64d88f3f6f5297eea5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Collectible
-  type: 3
-  coinValue: 10
+  m_EditorClassIdentifier: Assembly-CSharp::DamageBoostPickable
 --- !u!50 &8542011978390652762
 Rigidbody2D:
   serializedVersion: 5

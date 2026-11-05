@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour, IDamageable
 {
     [SerializeField] private EnemyDataSo data;
     [SerializeField] private ParticleSystem deathEffect;
-    [SerializeField] private Collectible coinPrefab;
+    [SerializeField] private Pickable coinPrefab;
     [SerializeField] private Color hitColor = new Color(1f, 0.35f, 0.35f);
     [SerializeField] private float hitFlashDuration = 0.1f;
     [SerializeField] private float stunDuration = 0.15f;

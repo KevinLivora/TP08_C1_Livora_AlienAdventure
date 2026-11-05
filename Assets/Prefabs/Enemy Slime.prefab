@@ -66,7 +66,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   data: {fileID: 11400000, guid: 748cf35cd64a03348af0a3cbf75268e3, type: 2}
   deathEffect: {fileID: 3703625363784823818, guid: 85ac3b06f4528a84994ebdeab665159d, type: 3}
-  coinPrefab: {fileID: 163680526057091787, guid: f941522ce9aa59b438b5a7f5f83a433f, type: 3}
+  coinPrefab: {fileID: 2634832082882036968, guid: f941522ce9aa59b438b5a7f5f83a433f, type: 3}
+  hitColor: {r: 1, g: 0.35, b: 0.35, a: 1}
+  hitFlashDuration: 0.1
+  stunDuration: 0.15
 --- !u!114 &4511785442014819009
 MonoBehaviour:
   m_ObjectHideFlags: 0
