@@ -700,8 +700,8 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: TP08_C1_Livora_AlienAdventure
-  metroPackageVersion: 
+  metroPackageName: TP08C1LivoraAlienAdventure
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -709,7 +709,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: TP08_C1_Livora_AlienAdventure
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: TP08_C1_Livora_AlienAdventure
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
@@ -776,7 +776,7 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 1
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: 30b16339-b784-4905-b4f0-6da357d93aa7
   framebufferDepthMemorylessMode: 0

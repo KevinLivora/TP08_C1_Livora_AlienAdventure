@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour, IDamageable
 {
     [SerializeField] private EnemyDataSo data;
     [SerializeField] private ParticleSystem deathEffect;
+    [SerializeField] private Collectible coinPrefab;
 
     private float health;
     private bool isDead;
@@ -35,6 +36,9 @@ public class Enemy : MonoBehaviour, IDamageable
         ParticleSystem effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         ParticleSystem.MainModule main = effect.main;
         Destroy(effect.gameObject, main.duration + main.startLifetime.constantMax);
+
+        if (coinPrefab != null && UnityEngine.Random.value <= data.coinDropChance)
+            Instantiate(coinPrefab, transform.position, Quaternion.identity);
 
         AudioManager.Instance.PlayEnemyKilled();
         Destroy(gameObject);

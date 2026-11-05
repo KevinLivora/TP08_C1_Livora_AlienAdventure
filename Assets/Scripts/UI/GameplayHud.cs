@@ -11,6 +11,7 @@ public class GameplayHud : MonoBehaviour
 
     [Header("Texts")]
     [SerializeField] private TMP_Text healthText;
+    [SerializeField] private TMP_Text coinsText;
 
     [Header("Keys")]
     [SerializeField] private Image[] keyIcons;
@@ -28,6 +29,8 @@ public class GameplayHud : MonoBehaviour
     [Header("Result")]
     [SerializeField] private GameObject resultPanel;
     [SerializeField] private TMP_Text resultTitleText;
+    [SerializeField] private TMP_Text finalScoreText;
+    [SerializeField] private TMP_Text bestScoreText;
     [SerializeField] private Button btnRetry;
     [SerializeField] private Button btnMenu;
 
@@ -89,9 +92,16 @@ public class GameplayHud : MonoBehaviour
         }
     }
 
-    public void ShowResult(bool won)
+    public void SetCoins(int runCoins)
+    {
+        coinsText.text = $"Coins: {runCoins}";
+    }
+
+    public void ShowResult(bool won, int score, int bestScore)
     {
         resultTitleText.text = won ? "YOU WIN!" : "GAME OVER";
+        finalScoreText.text = $"Score: {score}";
+        bestScoreText.text = $"Best: {bestScore}";
         resultPanel.SetActive(true);
     }
 

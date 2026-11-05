@@ -6,4 +6,5 @@ public class EnemyDataSo : ScriptableObject
     public float maxHealth = 100f;
     public float moveSpeed = 1.5f;
     public float patrolDistance = 3f;
+    [Range(0f, 1f)] public float coinDropChance = 0.5f;
 }

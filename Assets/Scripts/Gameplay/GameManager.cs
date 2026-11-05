@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int keysRequired = 3;
 
     private int keys;
+    private int runCoins;
 
     public bool IsPlaying { get; private set; }
 
@@ -32,6 +33,17 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         hud.SetKeys(keys, keysRequired);
+        hud.SetCoins(runCoins);
+    }
+
+    public void AddCoin(int amount)
+    {
+        if (!IsPlaying)
+            return;
+
+        runCoins += amount;
+        SaveData.AddCoins(amount);
+        hud.SetCoins(runCoins);
     }
 
     public void AddLife()
@@ -72,6 +84,8 @@ public class GameManager : MonoBehaviour
     {
         IsPlaying = false;
 
+        SaveData.SaveBestScore(runCoins);
+
         AudioManager.Instance.StopMusic();
 
         if (won)
@@ -79,7 +93,7 @@ public class GameManager : MonoBehaviour
         else
             AudioManager.Instance.PlayGameOver();
 
-        hud.ShowResult(won);
+        hud.ShowResult(won, runCoins, SaveData.BestScore);
 
         Time.timeScale = 0f;
     }
