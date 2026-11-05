@@ -11,7 +11,9 @@ public class GameplayHud : MonoBehaviour
     [SerializeField] private PlayerPowerUps playerPowerUps;
 
     [Header("Texts")]
-    [SerializeField] private TMP_Text healthText;
+    [SerializeField] private Image healthFill;
+    [SerializeField] private Color fullHealthColor = new Color(0.3f, 0.85f, 0.35f);
+    [SerializeField] private Color lowHealthColor = new Color(0.9f, 0.2f, 0.2f);
     [SerializeField] private TMP_Text coinsText;
 
     [Header("Keys")]
@@ -110,7 +112,9 @@ public class GameplayHud : MonoBehaviour
 
     private void SetHealth(int current, int max)
     {
-        healthText.text = $"Health: {current}/{max}";
+        float ratio = max > 0 ? (float)current / max : 0f;
+        healthFill.fillAmount = ratio;
+        healthFill.color = Color.Lerp(lowHealthColor, fullHealthColor, ratio);
     }
 
     private void OnRetryClicked()
