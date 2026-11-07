@@ -42,7 +42,7 @@ public class UiPauseMenuManager : MonoBehaviour
         if (!Input.GetKeyDown(KeyCode.Escape))
             return;
 
-        if (!GameManager.Instance.IsPlaying)
+        if (!GameManager.Instance.IsPlaying || ShopPanel.IsOpen)
             return;
 
         if (isPaused)

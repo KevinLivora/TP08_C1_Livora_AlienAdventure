@@ -39,7 +39,7 @@ public class PlayerPowerUps : MonoBehaviour
 
     public void ActivateInvincibility()
     {
-        invincibleTimer = data.invincibilityDuration;
+        invincibleTimer = data.TotalInvincibilityDuration;
     }
 
     public void ActivateDamageBoost()

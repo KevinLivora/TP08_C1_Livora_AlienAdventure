@@ -23,4 +23,12 @@ public class PlayerDataSo : ScriptableObject
     public float invincibilityDuration = 5f;
     public float damageBoostDuration = 8f;
     public float damageBoostMultiplier = 2f;
+
+    public int healthPerLevel = 1;
+    public float damagePerLevel = 10f;
+    public float invincibilityPerLevel = 1f;
+
+    public int TotalMaxHealth => maxHealth + SaveData.GetLevel(ShopStat.MaxHealth) * healthPerLevel;
+    public float TotalAttackDamage => attackDamage + SaveData.GetLevel(ShopStat.AttackDamage) * damagePerLevel;
+    public float TotalInvincibilityDuration => invincibilityDuration + SaveData.GetLevel(ShopStat.InvincibilityDuration) * invincibilityPerLevel;
 }

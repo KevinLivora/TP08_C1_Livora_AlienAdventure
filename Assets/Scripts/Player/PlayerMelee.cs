@@ -50,7 +50,7 @@ public class PlayerMelee : MonoBehaviour
 
     private void DealDamage()
     {
-        float damage = data.attackDamage;
+        float damage = data.TotalAttackDamage;
 
         if (powerUps.HasDamageBoost)
             damage *= data.damageBoostMultiplier;

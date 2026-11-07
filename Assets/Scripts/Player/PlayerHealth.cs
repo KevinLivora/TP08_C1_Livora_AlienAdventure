@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
 
     private PlayerPowerUps powerUps;
     private int currentHealth;
+    private int knownMaxHealth;
 
     public event Action<int, int> HealthChanged;
     public event Action Died;
@@ -15,12 +16,13 @@ public class PlayerHealth : MonoBehaviour
     private void Awake()
     {
         powerUps = GetComponent<PlayerPowerUps>();
-        currentHealth = data.maxHealth;
+        knownMaxHealth = data.TotalMaxHealth;
+        currentHealth = knownMaxHealth;
     }
 
     private void Start()
     {
-        HealthChanged?.Invoke(currentHealth, data.maxHealth);
+        HealthChanged?.Invoke(currentHealth, data.TotalMaxHealth);
     }
 
     public void TakeDamage(int amount)
@@ -29,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
             return;
 
         currentHealth = Mathf.Max(currentHealth - amount, 0);
-        HealthChanged?.Invoke(currentHealth, data.maxHealth);
+        HealthChanged?.Invoke(currentHealth, data.TotalMaxHealth);
 
         if (currentHealth == 0)
         {
@@ -46,7 +48,18 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
             return;
 
-        currentHealth = Mathf.Min(currentHealth + amount, data.maxHealth);
-        HealthChanged?.Invoke(currentHealth, data.maxHealth);
+        currentHealth = Mathf.Min(currentHealth + amount, data.TotalMaxHealth);
+        HealthChanged?.Invoke(currentHealth, data.TotalMaxHealth);
+    }
+
+    public void RefreshMaxHealth()
+    {
+        if (currentHealth <= 0)
+            return;
+
+        int newMax = data.TotalMaxHealth;
+        currentHealth += newMax - knownMaxHealth;
+        knownMaxHealth = newMax;
+        HealthChanged?.Invoke(currentHealth, newMax);
     }
 }
