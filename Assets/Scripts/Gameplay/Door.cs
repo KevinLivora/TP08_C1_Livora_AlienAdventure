@@ -7,7 +7,6 @@ public class Door : MonoBehaviour
     [SerializeField] private SpriteRenderer topRenderer;
     [SerializeField] private Sprite openMidSprite;
     [SerializeField] private Sprite openTopSprite;
-    [SerializeField] private string nextScene;
 
     private bool isOpen;
 
@@ -22,6 +21,8 @@ public class Door : MonoBehaviour
     {
         if (!isOpen || !other.CompareTag(GameTags.Player))
             return;
+
+        string nextScene = GameManager.Instance.NextScene;
 
         if (string.IsNullOrEmpty(nextScene))
         {

@@ -3664,7 +3664,6 @@ MonoBehaviour:
   topRenderer: {fileID: 895885799}
   openMidSprite: {fileID: -7642564259617375632, guid: 141928fbd6668e145b6e14f7429eb231, type: 3}
   openTopSprite: {fileID: 2227954825662832417, guid: 64d74edddba9c9744b7322fd9aa0e7f7, type: 3}
-  nextScene: Level2
 --- !u!4 &750084410
 Transform:
   m_ObjectHideFlags: 0
@@ -7793,7 +7792,7 @@ MonoBehaviour:
   playerHealth: {fileID: 1687716795}
   hud: {fileID: 718372249}
   door: {fileID: 750084409}
-  keysRequired: 3
+  levelData: {fileID: 11400000, guid: 15de652bad8a2334b93ce1ea84aae889, type: 2}
 --- !u!4 &1661883440
 Transform:
   m_ObjectHideFlags: 0

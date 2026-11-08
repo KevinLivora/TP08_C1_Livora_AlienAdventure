@@ -7,13 +7,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private GameplayHud hud;
     [SerializeField] private Door door;
-    [SerializeField] private int keysRequired = 3;
+    [SerializeField] private LevelDataSo levelData;
 
     private int keys;
     private int runCoins;
 
     public bool IsPlaying { get; private set; }
     public int RunCoins => runCoins;
+    public string NextScene => levelData.nextScene;
 
     private void Awake()
     {
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        hud.SetKeys(keys, keysRequired);
+        hud.SetKeys(keys, levelData.keysRequired);
         hud.SetCoins(runCoins);
     }
 
@@ -62,10 +63,10 @@ public class GameManager : MonoBehaviour
             return;
 
         keys++;
-        hud.SetKeys(keys, keysRequired);
+        hud.SetKeys(keys, levelData.keysRequired);
         AudioManager.Instance.PlayKey();
 
-        if (keys >= keysRequired)
+        if (keys >= levelData.keysRequired)
             door.Open();
     }
 
