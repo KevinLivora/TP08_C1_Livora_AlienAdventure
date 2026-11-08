@@ -18,13 +18,21 @@ public class CameraFollow : MonoBehaviour
         fixedZ = transform.position.z;
     }
 
+    private void Start()
+    {
+        transform.position = GetDesiredPosition();
+    }
+
     private void LateUpdate()
     {
-        Vector3 desiredPosition = new Vector3(
+        transform.position = Vector3.SmoothDamp(transform.position, GetDesiredPosition(), ref velocity, smoothTime);
+    }
+
+    private Vector3 GetDesiredPosition()
+    {
+        return new Vector3(
             Mathf.Clamp(target.position.x, minX, maxX),
             Mathf.Clamp(target.position.y + yOffset, minY, maxY),
             fixedZ);
-
-        transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothTime);
     }
 }

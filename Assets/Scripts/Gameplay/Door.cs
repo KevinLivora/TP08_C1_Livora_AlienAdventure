@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class Door : MonoBehaviour
     [SerializeField] private SpriteRenderer topRenderer;
     [SerializeField] private Sprite openMidSprite;
     [SerializeField] private Sprite openTopSprite;
+    [SerializeField] private string nextScene;
 
     private bool isOpen;
 
@@ -21,6 +23,18 @@ public class Door : MonoBehaviour
         if (!isOpen || !other.CompareTag(GameTags.Player))
             return;
 
-        GameManager.Instance.Win();
+        if (string.IsNullOrEmpty(nextScene))
+        {
+            GameManager.Instance.Win();
+            return;
+        }
+
+        PlayerHealth health = other.GetComponent<PlayerHealth>();
+
+        if (health != null)
+            RunState.Store(health.CurrentHealth, GameManager.Instance.RunCoins);
+
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(nextScene);
     }
 }

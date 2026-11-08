@@ -21,7 +21,7 @@ public class UiMainMenuManager : MonoBehaviour
 
     private void OnPlayClick()
     {
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene("Level1");
     }
 
     private void OnQuitClick()

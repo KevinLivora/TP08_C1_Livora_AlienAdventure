@@ -13,10 +13,12 @@ public class GameManager : MonoBehaviour
     private int runCoins;
 
     public bool IsPlaying { get; private set; }
+    public int RunCoins => runCoins;
 
     private void Awake()
     {
         Instance = this;
+        runCoins = RunState.TakeCoins();
         IsPlaying = true;
     }
 

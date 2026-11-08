@@ -10,6 +10,8 @@ public class PlayerHealth : MonoBehaviour
     private int currentHealth;
     private int knownMaxHealth;
 
+    public int CurrentHealth => currentHealth;
+
     public event Action<int, int> HealthChanged;
     public event Action Died;
 
@@ -17,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
     {
         powerUps = GetComponent<PlayerPowerUps>();
         knownMaxHealth = data.TotalMaxHealth;
-        currentHealth = knownMaxHealth;
+        currentHealth = RunState.TakeHealth(knownMaxHealth);
     }
 
     private void Start()
