@@ -24,6 +24,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip gameOverClip;
     [SerializeField] private AudioClip keyClip;
     [SerializeField] private AudioClip winClip;
+    [SerializeField] private AudioClip shopOpenClip;
+    [SerializeField] private AudioClip buyClip;
+    [SerializeField] private AudioClip doorOpenClip;
+    [SerializeField] private AudioClip damageBoostClip;
 
     [Header("Ui Clips")]
     [SerializeField] private AudioClip clickClip;
@@ -75,6 +79,14 @@ public class AudioManager : MonoBehaviour
     public void PlayKey() => PlaySfx(keyClip);
 
     public void PlayWin() => PlaySfx(winClip);
+
+    public void PlayShopOpen() => PlaySfx(shopOpenClip);
+
+    public void PlayBuy() => PlaySfx(buyClip);
+
+    public void PlayDoorOpen() => PlaySfx(doorOpenClip);
+
+    public void PlayDamageBoost() => PlaySfx(damageBoostClip);
 
     public void PlayClick() => uiSource.PlayOneShot(clickClip);
 

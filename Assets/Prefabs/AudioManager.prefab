@@ -191,6 +191,10 @@ MonoBehaviour:
   gameOverClip: {fileID: 8300000, guid: 91aa990b831fd1d4fb2433e8019a8596, type: 3}
   keyClip: {fileID: 8300000, guid: 8294aa90a001cce418879555e2ecfa98, type: 3}
   winClip: {fileID: 8300000, guid: 0a61bf2319ab07c448be6b34d4e6815e, type: 3}
+  shopOpenClip: {fileID: 8300000, guid: 180deb0b76993b14f85e0e5b79ca4163, type: 3}
+  buyClip: {fileID: 8300000, guid: 46a1fa8dc19f1344ea88ddaa80f8950f, type: 3}
+  doorOpenClip: {fileID: 8300000, guid: 8294aa90a001cce418879555e2ecfa98, type: 3}
+  damageBoostClip: {fileID: 8300000, guid: 0d5ccc3b02b133a4f8423d3c8050f269, type: 3}
   clickClip: {fileID: 8300000, guid: 7806de0836dd031459e81fdb7cd63f7b, type: 3}
 --- !u!1 &6125623221348916286
 GameObject:

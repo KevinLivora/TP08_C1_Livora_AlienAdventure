@@ -15,6 +15,7 @@ public class Door : MonoBehaviour
         isOpen = true;
         midRenderer.sprite = openMidSprite;
         topRenderer.sprite = openTopSprite;
+        AudioManager.Instance.PlayDoorOpen();
     }
 
     private void OnTriggerStay2D(Collider2D other)

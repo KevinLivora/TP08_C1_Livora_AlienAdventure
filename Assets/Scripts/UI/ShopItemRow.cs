@@ -45,7 +45,7 @@ public class ShopItemRow : MonoBehaviour
             return;
 
         SaveData.SetLevel(item.stat, level + 1);
-        AudioManager.Instance.PlayCoin();
+        AudioManager.Instance.PlayBuy();
         Purchased?.Invoke();
     }
 }

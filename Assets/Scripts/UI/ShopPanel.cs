@@ -45,12 +45,14 @@ public class ShopPanel : MonoBehaviour
     {
         gameObject.SetActive(true);
         Time.timeScale = 0f;
+        AudioManager.Instance.PlayShopOpen();
     }
 
     public void Close()
     {
         gameObject.SetActive(false);
         Time.timeScale = 1f;
+        AudioManager.Instance.PlayClick();
     }
 
     private void OnPurchased()
