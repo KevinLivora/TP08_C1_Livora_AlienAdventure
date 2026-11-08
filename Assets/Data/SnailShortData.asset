@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDataSo
   maxHealth: 100
   moveSpeed: 1
-  patrolDistance: 3.3
+  patrolDistance: 1.4
+  coinDropChance: 0.5

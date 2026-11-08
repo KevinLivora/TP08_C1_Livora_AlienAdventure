@@ -14,15 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDataSo
   moveSpeed: 6
   jumpForce: 15
+  maxJumps: 2
   gravityScale: 4
   jumpKey: 32
-  shootKey: 323
-  bulletDamage: 25
-  bulletSpeed: 14
-  bulletLifeTime: 2
-  fireCooldown: 0.35
-  invincibilityDuration: 5
+  attackKey: 323
+  attackAltKey: 106
+  attackDamage: 34
+  attackCooldown: 0.4
+  attackHitDelay: 0.08
+  attackWidth: 1.4
+  attackHeight: 1.2
+  attackKnockback: 2.5
   maxHealth: 3
   hitProtectionDuration: 1.5
-  powerShotDuration: 8
-  powerShotDamage: 1000
+  invincibilityDuration: 10
+  damageBoostDuration: 15
+  damageBoostMultiplier: 2
+  healthPerLevel: 1
+  damagePerLevel: 10
+  invincibilityPerLevel: 1
