@@ -8,7 +8,7 @@
 
 2D platformer made in Unity 6 (6000.3.21f1, URP 2D) for TP08 of *Programación con Motores de Videojuegos I* - Image Campus. Inspired by Hollow Knight and Timespinner.
 
-**Play it on itch.io:** https://YOUR-USER.itch.io/alienadventure
+**Play it on itch.io:** https://kevinlivora.itch.io/alienadventure
 
 ### Goal
 
@@ -63,7 +63,7 @@ WebGL and Windows, published on itch.io.
 
 Plataformas 2D hecho en Unity 6 (6000.3.21f1, URP 2D) para el TP08 de Programación con Motores de Videojuegos I - Image Campus. Inspirado en Hollow Knight y Timespinner.
 
-**Jugalo en itch.io:** https://TU-USUARIO.itch.io/alienadventure
+**Jugalo en itch.io:** https://kevinlivora.itch.io/alienadventure
 
 ### Objetivo
 
