@@ -40,6 +40,9 @@ public class GameplayHud : MonoBehaviour
     [SerializeField] private Button btnMenu;
 
     private const string MainMenuScene = "Main Menu";
+    private const string FirstLevelScene = "Level1";
+
+    private bool lastResultWon;
 
     private void Awake()
     {
@@ -104,6 +107,7 @@ public class GameplayHud : MonoBehaviour
 
     public void ShowResult(bool won, int score, int bestScore)
     {
+        lastResultWon = won;
         resultTitleText.text = won ? "YOU WIN!" : "GAME OVER";
         finalScoreText.text = $"Score: {score}";
         bestScoreText.text = $"Best: {bestScore}";
@@ -120,7 +124,7 @@ public class GameplayHud : MonoBehaviour
     private void OnRetryClicked()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(lastResultWon ? FirstLevelScene : SceneManager.GetActiveScene().name);
     }
 
     private void OnMenuClicked()
